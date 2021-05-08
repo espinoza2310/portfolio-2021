@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!--changing content-->
+{% block content %}
+<div>
+  {% include 'includes/navbar.html' %}
+</div>
+<div class="mx-auto mt-16 bg-black md:rounded-xl shadow-md overflow-hidden md:max-w-2xl md:mb-3">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0">
+      <img class="h-full w-full object-contain md:w-48 md:ml-6" src="{% static 'img/image/photo_contact.jpg' %}"
+        alt="Man looking at item at a store">
+    </div>
+    <div class="p-8">
+
+      <!-- contact -->
+      <div class="w-auto bg-black">
+
+        <!-- title -->
+        <div class="text-center px-6 py-23 mb-6 bg-black border-b">
+          <h1 class=" text-xl md:text-4xl pb-4">Contact Me</h1>
+          <p class="leading-loose text-gray-dark">
+            Please leave your email, name and small message, I will contact you soon posible
+          </p>
+        </div>
+        <!-- /title -->
+        <!-- component -->
+
+
+
+        <div class="max-w-2xl bg-white py-2 px-5 m-auto w-full mt-10">
+          <div class="grid grid-cols-2 gap-4 max-w-xl m-auto">
+            <forms action="" method="POST">
+              {% csrf_token %}
+              <table class="text-xs text-black md:text-2xl text-left"> {{myforms.as_table}} </table>
+              <button class="block  mb-4 px-3 py-2 text-xs font-bold rounded-full no-underline 
+                            hover:shadow bg-green-600 text-white ">Small Button</button>
+
+            </forms>
+            <div class="col-span-2 text-right">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      {% include 'includes/footer.html' %}
+
+      {% endblock %}

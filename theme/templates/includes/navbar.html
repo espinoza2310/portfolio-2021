@@ -1,0 +1,59 @@
+{% load static %}
+ <!--Nav-->
+ <nav id="header" class="fixed w-full z-30 top-0 text-white">
+  <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+    <div class="animate-pulse pl-4 flex items-center">
+      <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+        <!--Icon from: http://www.potlabicons.com/ -->
+        <svg  class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
+          <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502" transform="matrix(1,0,0,1,0,0)" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Rommel Espinoza
+      </a>
+    </div>
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+        <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+    </div>
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        <li class="mr-3" >
+          <a class="list-item {% if request.path == '/' %} active {% endif %}" href="{% url 'home' %}">Home</a>
+          <span class="sr-only">(current)</span>
+        </li>
+        
+        <li class="list-item mr-3">
+          <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4
+          border-b-2 border-blue-400
+          hover:border-b-2 hover:border-blue-50" href="{% url 'blog' %}">Blog</a>
+        </li>
+      
+        <li class="list-item  py-2 px-4 text-black  no-underline border-b-2 border-blue-400
+        hover:border-b-2 hover:border-blue-50 ">
+          <a  {% if '/contact/' in request.path %}
+          class="list-item active"
+          {% else %}
+          class="list-item"
+          {% endif %} href="{% url 'contact' %}">Contact</a>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </div>
+  <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+</nav>
+
+<!--EndNav-->
+
+
+
+
+
+
+ 
